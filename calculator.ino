@@ -14,6 +14,7 @@ Adafruit_SSD1306 display(OLED_RESET);
 const byte numRows= 4; //number of rows on the keypad
 const byte numCols= 4; //number of columns on the keypad
 
+//keymap defines the key pressed according to the row and columns just as appears on the keypad
 char customKey;
 double first = 0;
 long second = 0;
@@ -21,8 +22,6 @@ double total = 0;
 char Operator;
 bool equalPressed=false;
 bool showFirst = false;
-
-//keymap defines the key pressed according to the row and columns just as appears on the keypad
 
 char keymap[numRows][numCols]= 
 {
@@ -39,25 +38,31 @@ byte colPins[numCols]= {5,4,3,2}; //Columns 0 to 3
 //initializes an instance of the Keypad class
 Keypad customKeypad= Keypad(makeKeymap(keymap), rowPins, colPins, numRows, numCols);
 
-void setup()
-{
-  Serial.begin(9600);
-  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3D (for the 128x64)
+void showSplash() {
+  String splashString="Arduino Calculator";
   display.clearDisplay();
   display.setTextSize(1);
   display.setTextColor(WHITE);
   display.setCursor(0,0);
-  display.println("");
-  
-  display.println("  Arduino Calculator ");
-  display.println("");
-  display.println(" ------- By -------- ");
-  display.println("");
-  display.println(" *** Umar Sear ***");
-  display.display();
-  
+  display.setCursor(64-(splashString.length()*3),0);
+  display.print(splashString);
   display.setTextSize(2);
-  delay(3000);
+  splashString="By";
+  display.setCursor(64-(splashString.length()*6),16);
+  display.print(splashString);
+  display.setTextSize(2);
+  splashString="Umar Sear";
+  display.setCursor(64-(splashString.length()*6),40);
+  display.print(splashString);
+  display.display();
+  delay(5000);
+}
+void setup()
+{
+  Serial.begin(9600);
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3D (for the 128x64)
+  showSplash();
+  display.setTextSize(2);
   display.clearDisplay();
   display.display();
 }
@@ -72,14 +77,14 @@ customKey = customKeypad.getKey();
     showDisplay();  
     break;
 
-  case '+':                 
+  case '+':
     showFirst=true;
     Operator='+';
     showDisplay();
-    second = SecondNumber(); 
+    second = SecondNumber(); // get the collected the second number
     total = first + second;
     showDisplay(); 
-    first = total,          
+    first = total,  // reset values back to zero for next use
     second = 0;   
     break;
 
@@ -168,5 +173,3 @@ long SecondNumber()
   }
  return second; 
 }
-
-
