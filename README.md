@@ -9,6 +9,7 @@ You can buy the parts from eBay,
 
 OLED Display 
 * http://www.ebay.com/itm/0-96-Inch-4Pin-white-IIC-I2C-OLED-Display-Module-For-Arduino-Ships-from-US-/391662915947?ssPageName=STRK:MESE:IT
+
 Or 
 * http://www.ebay.com/itm/Yellow-Blue-0-96-128X64-OLED-I2C-IIC-Serial-LCD-LED-Display-Module-for-Arduino-/391663678277?ssPageName=STRK:MESE:IT
 
