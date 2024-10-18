@@ -8,12 +8,4 @@ There are bound to be some silly quirks, if you find something please share and 
 You can buy the parts from eBay, 
 
 OLED Display 
-* http://www.ebay.com/itm/0-96-034-I2C-IIC-SPI-Serial-128X64-White-OLED-LCD-LED-Display-Module-for-Arduino-/391701769842?ssPageName=STRK:MESE:IT
-
-Or
-
-* http://www.ebay.com/itm/0-96-034-I2C-IIC-Serial-128X64-Yellow-Blue-OLED-LCD-LED-Display-Module-for-Arduino-/391704173460?ssPageName=STRK:MESE:IT
-
-Keypad
-
-* https://makerusa.net/product/4-x-4-matrix-16-calculator-key-membrane-keypad-arduino-pi-avr-pic-usa-seller/
+* [http://www.ebay.com/itm/0-96-034-I2C-IIC-SPI-Serial-128X64-White-OLED-LCD-LED-Display-Module-for-Arduino-/391701769842?ssPageName=STRK:MESE:IT](https://makerusa.net/product/4-x-4-matrix-16-calculator-key-membrane-keypad-arduino-pi-avr-pic-usa-seller/)
